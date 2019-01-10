@@ -5,12 +5,19 @@
 #ifndef POBIMARINA_PLACE_HPP
 #define POBIMARINA_PLACE_HPP
 
+#include <boost/uuid/uuid.hpp>
+#include <iostream>
+#include <string>
+
 
 class Place {
+    std::string zone;
+    bool buoy;
+    boost::uuids::uuid place_id;
 public:
-    Place();
-
-
+    Place(const std::string &zone, bool buoy, const boost::uuids::uuid &place_id);
+    virtual ~Place();
+    std::string get_info();
 };
 
 

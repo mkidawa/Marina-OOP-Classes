@@ -1,18 +1,12 @@
 #include <iostream>
 #include <sstream>
-#include "ItemsManager.hpp"
-#include "RentersManager.hpp"
-#include "RentsManager.hpp"
 
-#include "Renter.hpp"
-#include "Rent.hpp"
-#include "Book.hpp"
 
 using namespace std;
 
 int main() {
 
-    ItemsManager rzeczy;
+    /*ItemsManager rzeczy;
     RentersManager ludzie;
     RentsManager wypoz;
 
@@ -23,7 +17,7 @@ int main() {
 
     wypoz.rent(ludzie("imie1"), rzeczy("nazwa1"));
 
-    wypoz.end(rzeczy("nazwa1"));
+    wypoz.end(rzeczy("nazwa1"));*/
 
     return 0;
 }

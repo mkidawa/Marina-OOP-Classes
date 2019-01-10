@@ -5,7 +5,7 @@ set(BOOST_ROOT "/usr/lib64")
 
 set(SOURCE_FILES
 	src/Place.cpp
-		)
+		src/Rent.cpp include/Rent.hpp)
 
 find_package(Boost 1.60 REQUIRED)
 
@@ -24,10 +24,7 @@ include_directories(
 
 set(SOURCE_TEST_HUMAN_FILES
  test/master.cpp
- test/RentTest.cpp
- test/BookTest.cpp
- test/RenterTest.cpp
- test/RepositoryTest.cpp)
+		)
 
 add_executable (Tests ${SOURCE_TEST_HUMAN_FILES})
 
