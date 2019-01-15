@@ -7,12 +7,11 @@
 
 #include <boost/uuid/uuid.hpp>
 #include <boost/date_time/local_time/local_time.hpp>
+#include <boost/date_time/posix_time/posix_time.hpp>
 #include <iostream>
 #include <memory>
 #include <string>
 
-typedef boost::local_time::local_date_time LocalTime;
-typedef boost::local_time::time_zone_ptr TimeZone;
 typedef boost::posix_time::ptime PosixTime;
 
 class Renter;
@@ -24,13 +23,14 @@ typedef std::shared_ptr<Place> Place_ptr;
 
 class Rent {
     boost::uuids::uuid rent_id;
-    //start: time_ptr
-    //stop: time_ptr
+    PosixTime start;
+    PosixTime stop;
     Place_ptr where;
     Renter_ptr who;
 
 public:
-    //konstruktor
+    Rent(const PosixTime &start, const PosixTime &stop, const Place_ptr &where, const Renter_ptr &who);
+    Rent(const std::string &start, const std::string &stop, const Place_ptr &where, const Renter_ptr &who);
     virtual ~Rent();
     std::string get_info();
 };
