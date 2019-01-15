@@ -12,7 +12,7 @@
 
 std::string Rent::get_info() {
     std::stringstream tmp;
-    tmp << "Rent ID: " << this->rent_id << ", start time: " << this->start << ", end time: " << this->stop << ", place id: " <<
+    tmp << "Rent ID: " << this->UUID << ", start time: " << this->start << ", end time: " << this->stop << ", place id: " <<
           ", renter: ";
     return tmp.str();
 }
@@ -23,8 +23,14 @@ Rent::Rent(const PosixTime &start, const PosixTime &stop, const Place_ptr &where
                                                                                                            stop(stop),
                                                                                                            where(where),
                                                                                                            who(who) {
-    rent_id = boost::uuids::random_generator()();
+    UUID = boost::uuids::random_generator()();
 }
 
 Rent::Rent(const std::string &start, const std::string &stop, const Place_ptr &where, const Renter_ptr &who) :
     Rent(PosixTime(boost::posix_time::time_from_string(start)), PosixTime(boost::posix_time::time_from_string(stop)), where, who) {}
+
+const boost::uuids::uuid &Rent::getUUID() const {
+    return UUID;
+}
+
+

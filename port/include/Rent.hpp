@@ -22,7 +22,7 @@ typedef std::shared_ptr<Renter> Renter_ptr;
 typedef std::shared_ptr<Place> Place_ptr;
 
 class Rent {
-    boost::uuids::uuid rent_id;
+    boost::uuids::uuid UUID;
     PosixTime start;
     PosixTime stop;
     Place_ptr where;
@@ -33,6 +33,7 @@ public:
     Rent(const std::string &start, const std::string &stop, const Place_ptr &where, const Renter_ptr &who);
     virtual ~Rent();
     std::string get_info();
+    const boost::uuids::uuid &getUUID() const;
 };
 
 #endif //POBIMARINA_RENT_HPP
