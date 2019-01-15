@@ -21,6 +21,7 @@ class Rent;
 
 typedef std::shared_ptr<Renter> Renter_ptr;
 typedef std::shared_ptr<Place> Place_ptr;
+typedef std::shared_ptr<Rent> Rent_ptr;
 
 class Rent {
     boost::uuids::uuid rent_id;
