@@ -5,7 +5,7 @@ set(BOOST_ROOT "/usr/lib64")
 
 set(SOURCE_FILES
 	src/Place.cpp
-		src/Rent.cpp include/Rent.hpp)
+		src/Rent.cpp include/Rent.hpp include/RenterType.hpp src/Yacht.cpp include/Yacht.hpp src/Motorboat.cpp include/Motorboat.hpp)
 
 find_package(Boost 1.60 REQUIRED)
 
