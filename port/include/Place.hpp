@@ -22,5 +22,4 @@ public:
     const boost::uuids::uuid &getUUID() const;
 };
 
-
 #endif //POBIMARINA_PLACE_HPP
