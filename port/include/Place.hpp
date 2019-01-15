@@ -13,11 +13,13 @@
 class Place {
     std::string zone;
     bool buoy;
-    boost::uuids::uuid place_id;
+    boost::uuids::uuid UUID;
 public:
-    Place(const std::string &zone, bool buoy, const boost::uuids::uuid &place_id);
+    Place(const std::string &zone, bool buoy);
     virtual ~Place();
     std::string get_info();
+
+    const boost::uuids::uuid &getUUID() const;
 };
 
 #endif //POBIMARINA_PLACE_HPP
