@@ -7,13 +7,13 @@
 using namespace std;
 
 void RentersManager::add(Renter_ptr item){
-    renters.create(item);
+    renters.add(item);
 }
 
 void RentersManager::remove(Renter_ptr item){
     renters.remove(item);
 }
 
-Renter_ptr RentersManager::operator()(string title){
-    return renters.find(title);
+Renter_ptr RentersManager::operator()(boost::uuids::uuid UUID){
+    return renters.find(UUID);
 }

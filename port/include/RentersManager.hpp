@@ -6,6 +6,7 @@
 #define PORT_RENTERSMANAGER_HPP
 
 #include "Repo.hpp"
+#include "Renter.hpp"
 
 #include <string>
 
@@ -14,7 +15,7 @@ class RentersManager{
 public:
     void add(Renter_ptr item);
     void remove(Renter_ptr item);
-    Renter_ptr operator()(std::string name);
+    Renter_ptr operator()(boost::uuids::uuid UUID);
 };
 
 

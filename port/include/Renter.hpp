@@ -16,8 +16,9 @@
 #include "Motorboat.hpp"
 
 class Renter;
-
+typedef std::shared_ptr<Renter> Renter_ptr;
 typedef std::shared_ptr<RenterType> RenterType_ptr;
+
 
 class Renter {
     boost::uuids::uuid UUID;
