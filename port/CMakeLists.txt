@@ -5,7 +5,7 @@ set(BOOST_ROOT "/usr/lib64")
 
 set(SOURCE_FILES
 	src/Place.cpp
-		src/Rent.cpp include/Rent.hpp include/RenterType.hpp src/Yacht.cpp include/Yacht.hpp src/Motorboat.cpp include/Motorboat.hpp)
+		src/Rent.cpp include/Rent.hpp include/RenterType.hpp src/Yacht.cpp include/Yacht.hpp src/Motorboat.cpp include/Motorboat.hpp src/Repo.cpp include/Repo.hpp src/RentsManager.cpp src/RentsManager.hpp)
 
 find_package(Boost 1.60 REQUIRED)
 
@@ -24,7 +24,7 @@ include_directories(
 
 set(SOURCE_TEST_HUMAN_FILES
  test/master.cpp
-		)
+        src/Repo.cpp include/Repo.hpp src/RentsManager.cpp src/RentsManager.hpp)
 
 add_executable (Tests ${SOURCE_TEST_HUMAN_FILES})
 
