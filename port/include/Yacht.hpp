@@ -11,6 +11,7 @@ class Yacht : public RenterType {
     int mast; //dystynktywna cecha dla jachtów - ilość masztów
 public:
     Yacht(int crew, double factor, int mast);
+    Yacht();
     virtual ~Yacht();
     double realPrice();
     int getMast() const;
