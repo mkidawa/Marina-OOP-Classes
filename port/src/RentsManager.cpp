@@ -7,7 +7,7 @@
 #include "RentsManager.hpp"
 #include "Place.hpp"
 
-Rent_ptr RentsManager::rent(PosixTime start, PosixTime stop, Place_ptr where, Renter_ptr who) {
+void RentsManager::rent(PosixTime start, PosixTime stop, Place_ptr where, Renter_ptr who) {
     currentRents.add(Rent_ptr(new Rent(start, stop, where, who)));
 }
 

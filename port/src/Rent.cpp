@@ -33,4 +33,12 @@ const boost::uuids::uuid &Rent::getUUID() const {
     return UUID;
 }
 
-
+double Rent::calculateRealPrice() {
+    double price = who->get_realPrice();
+    if(where->isBuoy()) price += 10;
+    std::string zone = where->getZone();
+    if(zone == "A") price *= 1.2;
+    else if (zone == "B") price *= 1.15;
+    else if (zone == "C") price *= 1.1;
+    return price;
+}

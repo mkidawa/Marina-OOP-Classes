@@ -35,6 +35,7 @@ public:
     virtual ~Rent();
     std::string get_info();
     const boost::uuids::uuid &getUUID() const;
+    double calculateRealPrice();
 };
 
 #endif //POBIMARINA_RENT_HPP

@@ -25,10 +25,11 @@ public:
     };
     T find(boost::uuids::uuid UUID) {
         for(auto i : container) {
-            if(i->getUUID == UUID) return i;
+            if(i->getUUID() == UUID) return i;
         }
         return nullptr;
     };
+    T find(std::string zone);
     Repo<T>() {};
 };
 

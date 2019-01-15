@@ -47,7 +47,7 @@ std::string Renter::get_info(){
     return info.str();
 }
 
-boost::uuids::uuid Renter::get_uuid(){
+boost::uuids::uuid Renter::getUUID(){
     return UUID;
 }
 

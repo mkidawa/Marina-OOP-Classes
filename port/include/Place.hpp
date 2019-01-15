@@ -18,8 +18,9 @@ public:
     Place(const std::string &zone, bool buoy);
     virtual ~Place();
     std::string get_info();
-
     const boost::uuids::uuid &getUUID() const;
+    const std::string &getZone() const;
+    bool isBuoy() const;
 };
 
 #endif //POBIMARINA_PLACE_HPP

@@ -34,7 +34,7 @@ public:
     std::string get_name();
     std::string get_country();
     double get_realPrice();
-    boost::uuids::uuid get_uuid();
+    boost::uuids::uuid getUUID();
     void operator=(const Renter& R);
     virtual ~Renter();
 };

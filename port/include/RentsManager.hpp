@@ -15,7 +15,7 @@ class RentsManager {
     Repo<Rent_ptr> archiveRents;
 
 public:
-    Rent_ptr rent(PosixTime start, PosixTime stop, Place_ptr where, Renter_ptr who);
+    void rent(PosixTime start, PosixTime stop, Place_ptr where, Renter_ptr who);
     void endRent(Place_ptr place);
     //Place_ptr findPlace(Rent_ptr rent);
 };
