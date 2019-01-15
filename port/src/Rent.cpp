@@ -4,7 +4,7 @@
 
 #include "Rent.hpp"
 #include "Place.hpp"
-//#include "Renter.hpp"
+#include "Renter.hpp"
 #include <boost/uuid/random_generator.hpp>
 #include <boost/date_time/local_time/local_time.hpp>
 #include <boost/date_time/posix_time/posix_time.hpp>
@@ -13,7 +13,7 @@
 std::string Rent::get_info() {
     std::stringstream tmp;
     tmp << "Rent ID: " << this->UUID << ", start time: " << this->start << ", end time: " << this->stop << ", place id: " <<
-          ", renter: ";
+          ", renter: " << this->who->get_info() << "\n";
     return tmp.str();
 }
 
