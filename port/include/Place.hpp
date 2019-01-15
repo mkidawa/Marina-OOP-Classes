@@ -20,5 +20,4 @@ public:
     std::string get_info();
 };
 
-
 #endif //POBIMARINA_PLACE_HPP
