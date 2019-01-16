@@ -8,6 +8,7 @@
 #include <boost/uuid/uuid.hpp>
 #include <iostream>
 #include <string>
+#include <memory>
 
 
 class Place {
@@ -22,5 +23,8 @@ public:
     const std::string &getZone() const;
     bool isBuoy() const;
 };
+
+typedef std::shared_ptr<Place> Place_ptr;
+
 
 #endif //POBIMARINA_PLACE_HPP

@@ -24,7 +24,10 @@ include_directories(
 
 set(SOURCE_TEST_HUMAN_FILES
  test/master.cpp
-		src/PlaceManager.cpp include/PlaceManager.hpp)
+ test/PlaceTest.cpp
+ include/RenterType.hpp src/Yacht.cpp include/Yacht.hpp src/Motorboat.cpp include/Motorboat.hpp src/Renter.cpp include/Renter.hpp
+ src/RentersManager.cpp include/RentersManager.hpp src/Rent.cpp include/Rent.hpp include/RentsManager.hpp src/RentsManager.cpp include/Repo.hpp src/Repo.cpp src/PlaceManager.cpp include/PlaceManager.hpp
+		test/RenterTest.cpp)
 
 add_executable (Tests ${SOURCE_TEST_HUMAN_FILES})
 

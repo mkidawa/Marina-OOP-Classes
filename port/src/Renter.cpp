@@ -9,6 +9,8 @@
 #include <boost/uuid/uuid_io.hpp>
 #include "Renter.hpp"
 #include "RenterType.hpp"
+#include "Yacht.hpp"
+#include "Motorboat.hpp"
 
 using namespace std;
 
@@ -16,7 +18,7 @@ Renter::Renter(string name, string country):
         name(name),
         country(country){
         UUID = boost::uuids::random_generator()();
-        innerRenter = RenterType_ptr(new Yacht());
+        innerRenter = nullptr;
         }
 
 Renter::Renter(std::string name, std::string country, RenterType_ptr R):
@@ -57,14 +59,17 @@ void Renter::operator=(const Renter& R){
     innerRenter = R.innerRenter;
 }
 
-string Renter::get_name(){
+const string &Renter::getName() const {
     return name;
 }
 
-string Renter::get_country(){
+const string &Renter::getCountry() const {
     return country;
 }
 
 Renter::~Renter(){
 }
 
+const RenterType_ptr &Renter::getInnerRenter() const {
+    return innerRenter;
+}

@@ -31,8 +31,11 @@ public:
     Renter(const Renter& R);
     Renter();
     std::string get_info();
-    std::string get_name();
-    std::string get_country();
+
+    const RenterType_ptr &getInnerRenter() const;
+
+    const std::string &getName() const;
+    const std::string &getCountry() const;
     double get_realPrice();
     boost::uuids::uuid getUUID();
     void operator=(const Renter& R);
