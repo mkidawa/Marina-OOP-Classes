@@ -33,6 +33,10 @@ public:
     Rent(const PosixTime &start, const PosixTime &stop, const Place_ptr &where, const Renter_ptr &who);
     Rent(const std::string &start, const std::string &stop, const Place_ptr &where, const Renter_ptr &who);
     virtual ~Rent();
+    const PosixTime &getStart() const;
+    const PosixTime &getStop() const;
+    const Place_ptr &getWhere() const;
+    const Renter_ptr &getWho() const;
     std::string get_info();
     const boost::uuids::uuid &getUUID() const;
     double calculateRealPrice();

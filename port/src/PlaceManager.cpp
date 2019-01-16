@@ -22,3 +22,8 @@ bool PlaceManager::isTaken(boost::uuids::uuid UUID) {
     if(takenPlaces.find(UUID) != nullptr) return 1;
     else return 0;
 }
+
+std::vector<Place_ptr> PlaceManager::findAll(std::string zone) {
+    std::vector<Place_ptr> ret = takenPlaces.findAll(zone);
+    return ret;
+}

@@ -17,9 +17,7 @@ class Repo {
     std::vector<T> container;
 
 public:
-    void add(T object) {
-        container.push_back(object);
-    };
+    void add(T object);
     void remove(T object) {
         container.erase(std::find(container.begin(), container.end(), object));
     };
@@ -30,8 +28,8 @@ public:
         return nullptr;
     };
     T find(std::string zone);
+    std::vector<T> findAll(std::string zone);
     Repo<T>() {};
 };
-
 
 #endif //POBIMARINA_REPO_HPP

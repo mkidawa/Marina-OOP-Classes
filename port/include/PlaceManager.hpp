@@ -19,6 +19,7 @@ public:
     void removePlace(Place_ptr place);
     std::vector<Place_ptr> showPlaces(std::string zone);
     bool isTaken(boost::uuids::uuid UUID);
+    std::vector<Place_ptr> findAll(std::string zone);
 };
 
 

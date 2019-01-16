@@ -11,6 +11,10 @@ void RentsManager::rent(PosixTime start, PosixTime stop, Place_ptr where, Renter
     currentRents.add(Rent_ptr(new Rent(start, stop, where, who)));
 }
 
+void RentsManager::addRent(Rent_ptr rent) {
+    currentRents.add(rent);
+}
+
 void RentsManager::endRent(Place_ptr place) {
     Rent_ptr R = currentRents.find(place->getUUID());
     currentRents.remove(R);

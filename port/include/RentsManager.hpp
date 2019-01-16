@@ -16,6 +16,7 @@ class RentsManager {
 
 public:
     void rent(PosixTime start, PosixTime stop, Place_ptr where, Renter_ptr who);
+    void addRent(Rent_ptr rent);
     void endRent(Place_ptr place);
     //Place_ptr findPlace(Rent_ptr rent);
 };
