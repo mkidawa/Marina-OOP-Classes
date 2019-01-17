@@ -9,19 +9,27 @@
 #include <boost/uuid/uuid_io.hpp>
 #include "Renter.hpp"
 #include "RenterType.hpp"
+#include "Yacht.hpp"
+#include "Motorboat.hpp"
+#include "RenterException.hpp"
 
 using namespace std;
 
 Renter::Renter(string name, string country):
         name(name),
         country(country){
+        if(contains_number(country)==true)
+            throw RenterException("Country cannot contain any numbers!");
         UUID = boost::uuids::random_generator()();
-        innerRenter = RenterType_ptr(new Yacht());
+        innerRenter = nullptr;
+
         }
 
 Renter::Renter(std::string name, std::string country, RenterType_ptr R):
         name(name),
         country(country){
+        if(contains_number(country)==true)
+            throw RenterException("Country cannot contain any numbers!");
         UUID = boost::uuids::random_generator()();
         innerRenter = R;
 }
@@ -47,7 +55,7 @@ std::string Renter::get_info(){
     return info.str();
 }
 
-boost::uuids::uuid Renter::get_uuid(){
+boost::uuids::uuid Renter::getUUID(){
     return UUID;
 }
 
@@ -57,14 +65,33 @@ void Renter::operator=(const Renter& R){
     innerRenter = R.innerRenter;
 }
 
-string Renter::get_name(){
+const string &Renter::getName() const {
     return name;
 }
 
-string Renter::get_country(){
+const string &Renter::getCountry() const {
     return country;
 }
 
 Renter::~Renter(){
 }
 
+const RenterType_ptr &Renter::getInnerRenter() const {
+    return innerRenter;
+}
+
+bool Renter::contains_number(const std::string &c)
+{
+    return (
+            c.find('0') != std::string::npos ||
+            c.find('1') != std::string::npos ||
+            c.find('2') != std::string::npos ||
+            c.find('3') != std::string::npos ||
+            c.find('4') != std::string::npos ||
+            c.find('5') != std::string::npos ||
+            c.find('6') != std::string::npos ||
+            c.find('7') != std::string::npos ||
+            c.find('8') != std::string::npos ||
+            c.find('9') != std::string::npos
+    );
+}

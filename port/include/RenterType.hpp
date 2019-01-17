@@ -24,5 +24,4 @@ public:
 
 };
 
-
 #endif //PORT_RENTERTYPE_HPP

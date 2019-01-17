@@ -6,7 +6,7 @@
 #define PORT_MOTORBOAT_HPP
 
 #include "RenterType.hpp"
-
+#include <memory>
 class Motorboat : public RenterType {
     double length; //dystynktywna cecha dla motorówek - długość kadłuba
 public:
@@ -14,8 +14,7 @@ public:
     virtual ~Motorboat();
     double realPrice();
     double getLength() const;
-
 };
-
+typedef std::shared_ptr<Motorboat> Motorboat_ptr;
 
 #endif //PORT_MOTORBOAT_HPP

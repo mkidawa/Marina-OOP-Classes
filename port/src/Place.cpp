@@ -28,3 +28,11 @@ std::string Place::get_info() {
 const boost::uuids::uuid &Place::getUUID() const {
     return UUID;
 }
+
+const std::string &Place::getZone() const {
+    return zone;
+}
+
+bool Place::isBuoy() const {
+    return buoy;
+}

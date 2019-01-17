@@ -5,6 +5,7 @@
 #ifndef PORT_YACHT_HPP
 #define PORT_YACHT_HPP
 
+#include <memory>
 #include "RenterType.hpp"
 
 class Yacht : public RenterType {
@@ -16,6 +17,6 @@ public:
     double realPrice();
     int getMast() const;
 };
-
+typedef std::shared_ptr<Yacht>Yacht_ptr;
 
 #endif //PORT_YACHT_HPP

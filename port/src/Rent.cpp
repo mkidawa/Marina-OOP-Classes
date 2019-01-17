@@ -5,6 +5,8 @@
 #include "Rent.hpp"
 #include "Place.hpp"
 #include "Renter.hpp"
+#include <sstream>
+#include <string>
 #include <boost/uuid/random_generator.hpp>
 #include <boost/date_time/local_time/local_time.hpp>
 #include <boost/date_time/posix_time/posix_time.hpp>
@@ -33,4 +35,35 @@ const boost::uuids::uuid &Rent::getUUID() const {
     return UUID;
 }
 
+double Rent::calculateRealPrice() {
+    double price = who->get_realPrice();
+    if(where->isBuoy()) price += 10;
+    std::string zone = where->getZone();
+    if(zone == "A") price *= 1.2;
+    else if (zone == "B") price *= 1.15;
+    else if (zone == "C") price *= 1.1;
+    boost::posix_time::time_duration diff = stop-start;
+    std::stringstream sub;
+    sub << diff;
+    std::string conv = sub.str();
+    std::string same = conv.substr(0,2);
+    int hours = stoi(same);
+    int days = hours/24;
+    return price*days;
+}
 
+const PosixTime &Rent::getStart() const {
+    return start;
+}
+
+const PosixTime &Rent::getStop() const {
+    return stop;
+}
+
+const Place_ptr &Rent::getWhere() const {
+    return where;
+}
+
+const Renter_ptr &Rent::getWho() const {
+    return who;
+}

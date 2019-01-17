@@ -13,8 +13,8 @@ find_package(Boost 1.60 REQUIRED)
 add_executable(Program ${SOURCE_FILES})
 
 target_link_libraries(Program
-    port
-    boost_date_time)
+        port
+        boost_date_time)
 
 target_include_directories(Program PUBLIC include)
 
