@@ -12,17 +12,6 @@ void PlaceManager::removePlace(Place_ptr place) {
     takenPlaces.remove(place);
 }
 
-std::vector<Place_ptr> PlaceManager::showPlaces(std::string zone) {
-    std::vector<Place_ptr> places;
-    places.push_back(takenPlaces.find(zone));
-    return places;
-}
-
-bool PlaceManager::isTaken(boost::uuids::uuid UUID) {
-    if(takenPlaces.find(UUID) != nullptr) return 1;
-    else return 0;
-}
-
 std::vector<Place_ptr> PlaceManager::findAll(std::string zone) {
     std::vector<Place_ptr> ret = takenPlaces.findAll(zone);
     return ret;

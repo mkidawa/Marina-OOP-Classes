@@ -30,6 +30,9 @@ public:
     T find(std::string zone);
     std::vector<T> findAll(std::string zone);
     Repo<T>() {};
+    int getSize() {
+        return container.size();
+    }
 };
 
 #endif //POBIMARINA_REPO_HPP

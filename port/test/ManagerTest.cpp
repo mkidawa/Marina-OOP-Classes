@@ -59,6 +59,21 @@ BOOST_AUTO_TEST_SUITE(RepoTest)
         BOOST_CHECK_THROW(rents.addRent(rent2),RentException);
         BOOST_CHECK_NO_THROW(rents.addRent(rent3));
     }
+    BOOST_AUTO_TEST_CASE(RentsMng_Archive_Test){
+        RentsManager rents;
+        Yacht_ptr yacht1(new Yacht( 5, 1.2, 1));
+        Renter_ptr renter1(new Renter("Pogoria","Poland",yacht1));
+        Place_ptr place1(new Place("B", true));
+        string start = "2019-01-20 00:00:00";
+        string stop = "2019-01-23 00:00:00";
+        PosixTime t1(boost::posix_time::time_from_string(start));
+        PosixTime t2(boost::posix_time::time_from_string(stop));
+        Rent_ptr rent1(new Rent(t1,t2,place1,renter1));
+        rents.addRent(rent1);
+        rents.endRent(place1);
+        BOOST_CHECK_EQUAL(rents.getSize(1), 0);
+        BOOST_CHECK_EQUAL(rents.getSize(2), 1);
+    }
 
 
 

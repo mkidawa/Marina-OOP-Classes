@@ -31,14 +31,13 @@ public:
     Renter(const Renter& R);
     Renter();
     std::string get_info();
-
     const RenterType_ptr &getInnerRenter() const;
-
     const std::string &getName() const;
     const std::string &getCountry() const;
     double get_realPrice();
     boost::uuids::uuid getUUID();
     void operator=(const Renter& R);
+    bool contains_number(const std::string &c);
     virtual ~Renter();
 };
 

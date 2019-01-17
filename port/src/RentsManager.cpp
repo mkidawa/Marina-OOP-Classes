@@ -17,6 +17,13 @@ void RentsManager::addRent(Rent_ptr rent) {
 
 void RentsManager::endRent(Place_ptr place) {
     Rent_ptr R = currentRents.find(place->getUUID());
-    currentRents.remove(R);
     archiveRents.add(R);
+    currentRents.remove(R);
+}
+
+int RentsManager::getSize(int param) {
+    int temp;
+    if(param == 1) temp = currentRents.getSize();
+    else if (param == 2) temp = archiveRents.getSize();
+    return temp;
 }
